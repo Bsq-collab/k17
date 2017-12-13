@@ -29,7 +29,9 @@ var findIt = function(e) {
 };
 
 var findDistance = function(e){
-    console.log("distance: " + distance(arr[0],arr[1],targetX,targetY));
+    dist = distance(arr[0],arr[1],targetX,targetY);
+	console.log("distance: " + distance(arr[0],arr[1],targetX,targetY));
+    return dist;
 }
 
 box.addEventListener("mousemove", findIt);
@@ -44,3 +46,9 @@ e.X //xcor of mouse
 e.Y //ycor of mouse
 */
 
+var addColor = function(e){
+    
+
+}
+
+box.addEventListener("mousemove", addColor();
