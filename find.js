@@ -7,9 +7,12 @@ var boxWidth = box.offsetWidth;
 var targetX = boxWidth / 2;
 var targetY = boxHeight / 2;
 
+var arr = [0,0];
 
 console.log( "box height: " + boxHeight );
 console.log( "box width: " + boxWidth );
+
+//console.log(e.clientX,e.clientY);
 
 //calculate distance between current mouse pos and target
 var distance = function (x0, y0, x1, y1) {
@@ -19,22 +22,25 @@ var distance = function (x0, y0, x1, y1) {
 
 
 var findIt = function(e) {
-    console.log(e.clientX,e.clientY);
+    arr=[e.clientX,e.clientY];
+    console.log(arr[0],arr[1]);
+    //console.log(arr);
+    return arr;
 };
 
-console.log("mousex: ");
-findIt();
-console.log("distance:"+ distance(e.X,e.Y,targetX,targetY));
-
-
-/*
-your OTHER FXNS
-
-*/
+var findDistance = function(e){
+    console.log("distance: " + distance(arr[0],arr[1],targetX,targetY));
+}
 
 box.addEventListener("mousemove", findIt);
+box.addEventListener("mousemove", findDistance);
+
+
+//console.log("arr[0]: "+ arr[0]);
+//console.log("distance: " + distance(arr[0],arr[1],targetX,targetY));
 /*
 event : 'mousemove'
 e.X //xcor of mouse
-e.y //ycor of mouse
+e.Y //ycor of mouse
 */
+
