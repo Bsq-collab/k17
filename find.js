@@ -67,6 +67,7 @@ var found= function(e){
     if(lightness<3){
 	points += 1;
 	console.log("Good work! Score: " + points);
+	console.log("\n\nThis has been a Bayan & Ibnul production");
 	//alert spawns an alert box
 	if(alert("Good work! Score: " + points)){}
 	//when the alert is closed, the target is changed
