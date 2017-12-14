@@ -47,9 +47,13 @@ var addColor = function(e){
   box.setAttribute("style", "background-color: hsl(175,100%,"+(100-lightness)+"%)");
   
 };
-
+var found= function(e){
+  if(lightness<3){
+    alert("Good work!!")//js pop up
+  }
+};
 box.addEventListener("mousemove", addColor);
-
+box.addEventListener("click", found);
                      
 /*
 event : 'mousemove'
