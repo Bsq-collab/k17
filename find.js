@@ -91,15 +91,13 @@ var addColor = function(e){
 //Automatically reloads after the user clicks ok
 var found= function(e){
     if(lightness<5){
-	points += 1;
-	console.log("Good work! Score: " + points);
-	console.log("\n\nThis has been a Bayan & Ibnul production");
-	//alert spawns an alert box
-	if(alert("Good work! Score: " + points)){}
-	//when the alert is closed, the target is changed
-	else randomizeTarget; 
-    }
-};
+	    points += 1;
+	    console.log("Good work! Score: " + points);
+	    console.log("\n\nThis has been a Bayan & Ibnul production");
+	    //alert spawns an alert box
+	    alert("Good work! press Ok and refresh");
+    };
+}
 
 //Event Listeners to change the color when the mouse moves, and to display the alert when the target is found
 box.addEventListener("mousemove", addColor);
