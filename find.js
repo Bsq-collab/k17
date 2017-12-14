@@ -1,3 +1,9 @@
+/*
+  Team iBerry-- Bayan Berri & Ibnul Jahan
+  SoftDev1 pd7
+  K17--Moo?
+  2017-12-14
+*/
 var box = document.getElementById("box");
 var boxHeight = box.offsetHeight;
 var boxWidth = box.offsetWidth;
