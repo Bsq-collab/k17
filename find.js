@@ -8,6 +8,8 @@ var targetX = boxWidth / 2;
 var targetY = boxHeight / 2;
 
 var arr = [0,0];
+var dist=0;
+var maxDistance=0;
 
 console.log( "box height: " + boxHeight );
 console.log( "box width: " + boxWidth );
@@ -22,33 +24,51 @@ var distance = function (x0, y0, x1, y1) {
 
 
 var findIt = function(e) {
-    arr=[e.clientX,e.clientY];
-    console.log(arr[0],arr[1]);
-    //console.log(arr);
-    return arr;
+  arr=[e.x,e.y];
+  console.log(arr[0],arr[1]);
+  //console.log(arr);
+  return arr;
 };
 
 var findDistance = function(e){
-    dist = distance(arr[0],arr[1],targetX,targetY);
+  dist = distance(arr[0],arr[1],targetX,targetY);
 	console.log("distance: " + distance(arr[0],arr[1],targetX,targetY));
-    return dist;
+  return dist;
 }
 
 box.addEventListener("mousemove", findIt);
 box.addEventListener("mousemove", findDistance);
 
+var addColor = function(e){
+  dist= distance(arr[0],arr[1],targetX,targetY);
+  farthest=distance(0,0,boxWidth,boxHeight)/2;
+  lightness=(dist/farthest) *100;
+  console.log("lightness: "+ lightness);
+  box.setAttribute("style", "background-color: hsl(175,100%,"+(100-lightness)+"%)");
+  
+};
 
-//console.log("arr[0]: "+ arr[0]);
-//console.log("distance: " + distance(arr[0],arr[1],targetX,targetY));
+box.addEventListener("mousemove", addColor);
+
+                     
 /*
 event : 'mousemove'
 e.X //xcor of mouse
 e.Y //ycor of mouse
 */
-
-var addColor = function(e){
-    
-
-}
-
-box.addEventListener("mousemove", addColor();
+/*
+  NOTES
+  JS for selecting HTML elements from the dom:
+  document.getElementById(ID)
+  document.getElementByTagName(TAG)
+  document.getElementsbyCLassName(class)
+  document is like the root/computer/c:
+  JS for manipulating HTML elements
+  ELEMENT.remove()
+  ELEMENT.innerHTML(HTML)
+  document.createElement(html, tag, name)
+  ELEMENT. appendChild(element)
+  element.setAttribute(name,value)
+  element.getAttribute(mname)
+  element.addEventListener(event,function)
+*/
