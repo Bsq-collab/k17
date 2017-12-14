@@ -77,8 +77,8 @@ var found= function(e){
 //The lightness of the color is based on the ratio of the current distance to the maximum distance
 var addColor = function(e){
   dist= distance(arr[0],arr[1],targetX,targetY);
-  farthest=distance(0,0,boxWidth,boxHeight)/2;
-  lightness=(dist/farthest) *100;
+  maxDistance=distance(0,0,boxWidth,boxHeight)/2;
+  lightness=(dist/maxDistance) *100;
   console.log("lightness: "+ lightness);
   if (lightness < 5) {
 	  console.log("You should click now!");
